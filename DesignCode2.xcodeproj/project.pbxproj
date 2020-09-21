@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD20F70B251912D800DD5305 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = CD20F70A251912D800DD5305 /* SDWebImageSwiftUI */; };
 		CD256D092513729200455603 /* DesignCode2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD256D082513729200455603 /* DesignCode2App.swift */; };
 		CD256D0B2513729200455603 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD256D0A2513729200455603 /* ContentView.swift */; };
 		CD256D0D2513729300455603 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD256D0C2513729300455603 /* Assets.xcassets */; };
@@ -60,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD20F70B251912D800DD5305 /* SDWebImageSwiftUI in Frameworks */,
 				CD56EB762513CB6000CD0293 /* Contentful in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,6 +139,7 @@
 			name = DesignCode2;
 			packageProductDependencies = (
 				CD56EB752513CB6000CD0293 /* Contentful */,
+				CD20F70A251912D800DD5305 /* SDWebImageSwiftUI */,
 			);
 			productName = DesignCode2;
 			productReference = CD256D052513729200455603 /* DesignCode2.app */;
@@ -168,6 +171,7 @@
 			mainGroup = CD256CFC2513729200455603;
 			packageReferences = (
 				CD56EB742513CB6000CD0293 /* XCRemoteSwiftPackageReference "contentful.swift" */,
+				CD20F709251912D800DD5305 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = CD256D062513729200455603 /* Products */;
 			projectDirPath = "";
@@ -403,6 +407,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		CD20F709251912D800DD5305 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.0;
+			};
+		};
 		CD56EB742513CB6000CD0293 /* XCRemoteSwiftPackageReference "contentful.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/contentful/contentful.swift.git";
@@ -414,6 +426,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		CD20F70A251912D800DD5305 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD20F709251912D800DD5305 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
 		CD56EB752513CB6000CD0293 /* Contentful */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CD56EB742513CB6000CD0293 /* XCRemoteSwiftPackageReference "contentful.swift" */;

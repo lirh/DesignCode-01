@@ -1,12 +1,13 @@
 //
 //  CourseDetail.swift
-//  DeCode
+//  DesignCode
 //
-//  Created by 李瑞华 on 2020/9/17.
-//  Copyright © 2020 lirh. All rights reserved.
+//  Created by Meng To on 2020-01-30.
+//  Copyright © 2020 Meng To. All rights reserved.
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct CourseDetail: View {
     var course: Course
@@ -44,7 +45,7 @@ struct CourseDetail: View {
                         }
                     }
                     Spacer()
-                    Image(uiImage: course.image)
+                    WebImage(url: course.image)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(maxWidth: .infinity)
