@@ -10,10 +10,12 @@ import SwiftUI
 
 struct CourseList: View {
     
-    @State var courses = courseData
+    @ObservedObject var store = CourseStore()
     @State var active = false
     @State var activeIndex = -1
     @State var activeView = CGSize.zero
+    
+    
     
     var body: some View {
         ZStack {
@@ -30,23 +32,23 @@ struct CourseList: View {
                     .blur(radius: active ? 20 : 0)
                 
                 VStack(spacing: 30.0) {
-                    ForEach(courses.indices, id: \.self) { index in
+                    ForEach(store.courses.indices, id: \.self) { index in
                         GeometryReader { geometry in
                             CourseView(
-                                show: self.$courses[index].show,course: self.courses[index],
+                                show: self.$store.courses[index].show,course: store.courses[index],
                                 active: self.$active,
                                 index: index,
                                 activeIndex: self.$activeIndex,
                                 activeView: self.$activeView
                             )
-                            .offset(y: self.courses[index].show ? -geometry.frame(in: .global).minY : 0)
+                            .offset(y: store.courses[index].show ? -geometry.frame(in: .global).minY : 0)
                             .opacity(self.activeIndex != index && self.active ? 0 : 1)
                             //.scaleEffect(self.activeIndex != index && self.active ? 0 : 1)
                             .offset(x: self.activeIndex != index && self.active ? screen.width : 0)
                         }
                         .frame(height: 280)
-                        .frame(maxWidth: self.courses[index].show ? .infinity : screen.width - 60)
-                        .zIndex(self.courses[index].show ? 1 : 0)
+                        .frame(maxWidth: store.courses[index].show ? .infinity : screen.width - 60)
+                        .zIndex(store.courses[index].show ? 1 : 0)
                     }
                 }
                 .frame(width: screen.width)

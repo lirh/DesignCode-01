@@ -28,7 +28,6 @@ struct PostList: View {
     }
 }
 
-
 struct PostList_Previews: PreviewProvider {
     static var previews: some View {
         PostList()
