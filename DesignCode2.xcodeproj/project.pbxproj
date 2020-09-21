@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CD20F70B251912D800DD5305 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = CD20F70A251912D800DD5305 /* SDWebImageSwiftUI */; };
+		CD20F70E251915EB00DD5305 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD20F70D251915EB00DD5305 /* BlurView.swift */; };
 		CD256D092513729200455603 /* DesignCode2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD256D082513729200455603 /* DesignCode2App.swift */; };
 		CD256D0B2513729200455603 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD256D0A2513729200455603 /* ContentView.swift */; };
 		CD256D0D2513729300455603 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD256D0C2513729300455603 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD20F70D251915EB00DD5305 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		CD256D052513729200455603 /* DesignCode2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignCode2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD256D082513729200455603 /* DesignCode2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignCode2App.swift; sourceTree = "<group>"; };
 		CD256D0A2513729200455603 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				CD56EB712513C5F900CD0293 /* DataStore.swift */,
 				CD89280D2513AA3100A37C25 /* PostList.swift */,
 				CD830CE32513A3D600C7DA60 /* TabBar.swift */,
+				CD20F70D251915EB00DD5305 /* BlurView.swift */,
 				CD256D0C2513729300455603 /* Assets.xcassets */,
 				CD256D112513729300455603 /* Info.plist */,
 				CD256D0E2513729300455603 /* Preview Content */,
@@ -215,6 +218,7 @@
 				CD89280E2513AA3100A37C25 /* PostList.swift in Sources */,
 				CD830CE12513A3C400C7DA60 /* UpdateStore.swift in Sources */,
 				CD830CCC2513A34E00C7DA60 /* CourseList.swift in Sources */,
+				CD20F70E251915EB00DD5305 /* BlurView.swift in Sources */,
 				CD256D092513729200455603 /* DesignCode2App.swift in Sources */,
 				CD830CE42513A3D600C7DA60 /* TabBar.swift in Sources */,
 			);
