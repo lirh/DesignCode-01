@@ -21,7 +21,7 @@ struct CourseList: View {
                 .animation(.linear)
                 .edgesIgnoringSafeArea(.all)
             
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 VStack(spacing: 30) {
                     Text("Courses")
                         .font(.largeTitle).bold()
@@ -88,7 +88,7 @@ struct CourseView: View {
             .padding(30)
             .frame(maxWidth: show ? .infinity : screen.width - 60, maxHeight: show ? .infinity : 280, alignment: .top)
             .offset(y: show ? 460 : 0)
-            .background(Color.white)
+            .background(Color("background2"))
             .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
             .shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 20)
             .opacity(show ? 1 : 0)
@@ -167,28 +167,28 @@ struct CourseView: View {
             }
         }
         .frame(height: show ? screen.height : 280)
-        .scaleEffect(1 - self.activeView.height / 1000)
-        .rotation3DEffect(Angle(degrees: Double(self.activeView.height / 10)), axis: (x: 0, y: 10.0, z: 0))
-        .hueRotation(Angle(degrees: Double(self.activeView.height)))
-        .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
-        .gesture(
-            show ?
-            DragGesture().onChanged { value in
-                guard value.translation.height < 300 else { return }
-                guard value.translation.height > 0 else { return }
-                
-                self.activeView = value.translation
-            }
-            .onEnded { value in
-                if self.activeView.height > 50 {
-                    self.show = false
-                    self.active = false
-                    self.activeIndex = -1
-                }
-                self.activeView = .zero
-            }
-            : nil
-        )
+//        .scaleEffect(1 - self.activeView.height / 1000)
+//        .rotation3DEffect(Angle(degrees: Double(self.activeView.height / 10)), axis: (x: 0, y: 10.0, z: 0))
+//        .hueRotation(Angle(degrees: Double(self.activeView.height)))
+//        .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
+//        .gesture(
+//            show ?
+//            DragGesture().onChanged { value in
+//                guard value.translation.height < 300 else { return }
+//                guard value.translation.height > 0 else { return }
+//
+//                self.activeView = value.translation
+//            }
+//            .onEnded { value in
+//                if self.activeView.height > 50 {
+//                    self.show = false
+//                    self.active = false
+//                    self.activeIndex = -1
+//                }
+//                self.activeView = .zero
+//            }
+//            : nil
+//        )
         .edgesIgnoringSafeArea(.all)
     }
 }

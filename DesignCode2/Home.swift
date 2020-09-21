@@ -21,7 +21,7 @@ struct Home: View {
         ZStack {
             //简单的为ZStack制作一个全屏背景色
             //全屏幕着色 root背景 适用于所有子元素背景
-            Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1))
+            Color("background2")
                 .edgesIgnoringSafeArea(.all)
 
             HomeView(showProfile: $showProfile,showContent: $showContent)
@@ -29,11 +29,11 @@ struct Home: View {
                 .padding(.top,44)
                 .background(
                     VStack {
-                        LinearGradient(gradient: Gradient(colors: [Color("background2"), Color.white]), startPoint: .top, endPoint: .bottom)
+                        LinearGradient(gradient: Gradient(colors: [Color("background2"), Color("background1")]), startPoint: .top, endPoint: .bottom)
                             .frame(height: 200)
                         Spacer()
                     }
-                    .background(Color.white)
+                    .background(Color("background1"))
                 )
                 .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
                 .shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 0)
@@ -68,8 +68,7 @@ struct Home: View {
             )
             
             if showContent {
-                Color.white
-                    .edgesIgnoringSafeArea(.all)
+                BlurView(style: .systemThinMaterial).edgesIgnoringSafeArea(.all)
                 ContentView()
                     .transition(.move(edge: .bottom))
                     .animation(.spring(response: 0.6, dampingFraction: 0.8, blendDuration: 0))
@@ -106,7 +105,7 @@ struct Home: View {
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
-        Home()
+        Home().environment(\.colorScheme, .dark)
     }
 }
 

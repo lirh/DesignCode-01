@@ -28,10 +28,11 @@ struct HomeView: View {
                     //使用iOS13的内建模型视图导航，切换大另一个视图
                     Button(action: {self.showUpdate.toggle()}) {
                         Image(systemName: "bell")
-                            .renderingMode(.original)
+//                            .renderingMode(.original)
+                            .foregroundColor(.primary)
                             .font(.system(size: 16, weight: .medium))
                             .frame(width:36,height: 36)
-                            .background(Color.white)
+                            .background(Color("background3"))
                             .clipShape(Circle())
                             //双层阴影，制作圆形立体背景
                             .modifier(IconModifier())
@@ -84,6 +85,7 @@ struct HomeView: View {
                 
                 Spacer()
             }
+            .frame(width: screen.width)
         }
     }
 }
@@ -161,7 +163,7 @@ struct WatchRingsView: View {
                 }
             }
             .padding(8)
-            .background(Color.white)
+            .background(Color("background3"))
             .cornerRadius(20)
             .modifier(ShadowModifier())
             
@@ -170,7 +172,7 @@ struct WatchRingsView: View {
                 
             }
             .padding(8)
-            .background(Color.white)
+            .background(Color("background3"))
             .cornerRadius(20)
             .modifier(ShadowModifier())
             
@@ -179,7 +181,7 @@ struct WatchRingsView: View {
                 
             }
             .padding(8)
-            .background(Color.white)
+            .background(Color("background3"))
             .cornerRadius(20)
             .modifier(ShadowModifier())
         }

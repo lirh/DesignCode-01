@@ -16,10 +16,10 @@ struct TabBar: View {
                     Image(systemName: "play.circle.fill")
                     Text("Home")
                 }
-            ContentView()
+            CourseList()
                 .tabItem{
                     Image(systemName: "rectangle.stack.fill")
-                    Text("Certificates")
+                    Text("Courses")
                 }
         }
 //        .edgesIgnoringSafeArea(.all)
