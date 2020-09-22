@@ -35,6 +35,22 @@ struct Buttons: View {
                     }
                 )
                 .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                //浮动的图标
+                .overlay(
+                    HStack {
+                        Image(systemName: "person.crop.circle")
+                            .font(.system(size: 24, weight: .light))
+                            //切换前景透明度，制作长按后 Button的下划线
+                            .foregroundColor(Color.white.opacity(press ? 0 : 1))
+                            .frame(width: press ? 64 : 50, height: press ? 4 : 50)
+                            .background(Color(#colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)))
+                            .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                            .shadow(color: Color(#colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)).opacity(0.3), radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: 10, y: 10)
+                            .offset(x: press ? 70 : -10, y: press ? 16 : 0)
+                        Spacer()
+                    }
+                        
+                )
                 .shadow(color: Color(press ? #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1) : #colorLiteral(red: 0.7608050108, green: 0.8164883852, blue: 0.9259157777, alpha: 1)), radius: 20, x: 20, y: 20)
                 .shadow(color: Color(press ? #colorLiteral(red: 0.7608050108, green: 0.8164883852, blue: 0.9259157777, alpha: 1) : #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)), radius: 20, x: -20, y: -20)
                 .scaleEffect(tap ? 1.2 : 1)
