@@ -17,6 +17,7 @@
 		CD56EB722513C5F900CD0293 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD56EB712513C5F900CD0293 /* DataStore.swift */; };
 		CD56EB762513CB6000CD0293 /* Contentful in Frameworks */ = {isa = PBXBuildFile; productRef = CD56EB752513CB6000CD0293 /* Contentful */; };
 		CD56EB792513D05D00CD0293 /* CourseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD56EB782513D05D00CD0293 /* CourseStore.swift */; };
+		CD819F38251A6444003FADB1 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD819F37251A6444003FADB1 /* Buttons.swift */; };
 		CD830CC62513A31700C7DA60 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD830CC52513A31700C7DA60 /* Modifiers.swift */; };
 		CD830CC92513A33200C7DA60 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD830CC82513A33200C7DA60 /* Home.swift */; };
 		CD830CCC2513A34E00C7DA60 /* CourseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD830CCB2513A34E00C7DA60 /* CourseList.swift */; };
@@ -43,6 +44,7 @@
 		CD256D1B2513A25D00455603 /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
 		CD56EB712513C5F900CD0293 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		CD56EB782513D05D00CD0293 /* CourseStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseStore.swift; sourceTree = "<group>"; };
+		CD819F37251A6444003FADB1 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		CD830CC52513A31700C7DA60 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		CD830CC82513A33200C7DA60 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		CD830CCB2513A34E00C7DA60 /* CourseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseList.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				CD89280D2513AA3100A37C25 /* PostList.swift */,
 				CD830CE32513A3D600C7DA60 /* TabBar.swift */,
 				CD20F70D251915EB00DD5305 /* BlurView.swift */,
+				CD819F37251A6444003FADB1 /* Buttons.swift */,
 				CD256D0C2513729300455603 /* Assets.xcassets */,
 				CD256D112513729300455603 /* Info.plist */,
 				CD256D0E2513729300455603 /* Preview Content */,
@@ -217,6 +220,7 @@
 				CD830CD22513A37000C7DA60 /* HomeView.swift in Sources */,
 				CD89280E2513AA3100A37C25 /* PostList.swift in Sources */,
 				CD830CE12513A3C400C7DA60 /* UpdateStore.swift in Sources */,
+				CD819F38251A6444003FADB1 /* Buttons.swift in Sources */,
 				CD830CCC2513A34E00C7DA60 /* CourseList.swift in Sources */,
 				CD20F70E251915EB00DD5305 /* BlurView.swift in Sources */,
 				CD256D092513729200455603 /* DesignCode2App.swift in Sources */,
