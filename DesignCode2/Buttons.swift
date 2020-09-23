@@ -169,7 +169,6 @@ struct PayButton: View {
                 .foregroundColor(Color(#colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)))
                 .opacity(press ? 1 : 0)
                 .scaleEffect(press ? 1 : 0)
-            
         }
         .frame(width: 100, height: 100)
         .background(
@@ -186,6 +185,17 @@ struct PayButton: View {
             }
         )
         .clipShape(Circle())
+        .overlay(
+            Circle()
+                .trim(from: press ? 0.001 : 1, to: 1)
+                .stroke(LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1)), Color(#colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1))]), startPoint: .topLeading, endPoint: .bottomTrailing),style: StrokeStyle(lineWidth: 5, lineCap: .round))
+                .frame(width: 88, height: 88)
+                .rotationEffect(Angle(degrees: 90))
+                .rotation3DEffect(
+                    Angle(degrees: 180),
+                    axis: (x: 1.0, y: 0, z: 0.0))
+                .animation(.easeOut)
+        )
         .shadow(color: Color(press ? #colorLiteral(red: 0.7608050108, green: 0.8164883852, blue: 0.9259157777, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)), radius: 20, x: -20, y: -20)
         .shadow(color: Color(press ? #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) : #colorLiteral(red: 0.7608050108, green: 0.8164883852, blue: 0.9259157777, alpha: 1)), radius: 20, x: 20, y: 20)
         .scaleEffect(tap ? 1.2 : 1)
