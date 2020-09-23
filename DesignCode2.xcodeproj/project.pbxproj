@@ -17,6 +17,7 @@
 		CD56EB722513C5F900CD0293 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD56EB712513C5F900CD0293 /* DataStore.swift */; };
 		CD56EB762513CB6000CD0293 /* Contentful in Frameworks */ = {isa = PBXBuildFile; productRef = CD56EB752513CB6000CD0293 /* Contentful */; };
 		CD56EB792513D05D00CD0293 /* CourseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD56EB782513D05D00CD0293 /* CourseStore.swift */; };
+		CD5D2360251B7DB400A9E110 /* LoginVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5D235F251B7DB400A9E110 /* LoginVIew.swift */; };
 		CD819F38251A6444003FADB1 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD819F37251A6444003FADB1 /* Buttons.swift */; };
 		CD830CC62513A31700C7DA60 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD830CC52513A31700C7DA60 /* Modifiers.swift */; };
 		CD830CC92513A33200C7DA60 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD830CC82513A33200C7DA60 /* Home.swift */; };
@@ -44,6 +45,7 @@
 		CD256D1B2513A25D00455603 /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
 		CD56EB712513C5F900CD0293 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		CD56EB782513D05D00CD0293 /* CourseStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseStore.swift; sourceTree = "<group>"; };
+		CD5D235F251B7DB400A9E110 /* LoginVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVIew.swift; sourceTree = "<group>"; };
 		CD819F37251A6444003FADB1 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		CD830CC52513A31700C7DA60 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		CD830CC82513A33200C7DA60 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				CD256D082513729200455603 /* DesignCode2App.swift */,
+				CD5D235F251B7DB400A9E110 /* LoginVIew.swift */,
 				CD256D0A2513729200455603 /* ContentView.swift */,
 				CD256D1B2513A25D00455603 /* RingView.swift */,
 				CD830CC52513A31700C7DA60 /* Modifiers.swift */,
@@ -223,6 +226,7 @@
 				CD819F38251A6444003FADB1 /* Buttons.swift in Sources */,
 				CD830CCC2513A34E00C7DA60 /* CourseList.swift in Sources */,
 				CD20F70E251915EB00DD5305 /* BlurView.swift in Sources */,
+				CD5D2360251B7DB400A9E110 /* LoginVIew.swift in Sources */,
 				CD256D092513729200455603 /* DesignCode2App.swift in Sources */,
 				CD830CE42513A3D600C7DA60 /* TabBar.swift in Sources */,
 			);
