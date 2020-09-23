@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct LoginVIew: View {
+    @State var show = false
+    
     var body: some View {
         ZStack(alignment: .top) {
             Color.black.edgesIgnoringSafeArea(.all)
@@ -41,9 +43,17 @@ struct LoginVIew: View {
                 ZStack {
                     Image(uiImage: #imageLiteral(resourceName: "Blob"))
                         .offset(x:-150, y: -200)
+                        .rotationEffect(Angle(degrees: show ? 360 + 90 : 90))
                         .blendMode(.plusDarker)
+                        //线性动画，持续120秒一个周期，一直重复
+                        .animation(Animation.linear(duration: 120).repeatForever(autoreverses: false))
+                        .onAppear {
+                            self.show = true
+                        }
                     Image(uiImage: #imageLiteral(resourceName: "Blob"))
                         .offset(x:-200, y: -250)
+                        .rotationEffect(Angle(degrees: show ? 360 : 0),anchor: .leading)
+                        .animation(Animation.linear(duration: 100).repeatForever(autoreverses: false))
                         .blendMode(.overlay)
                 }
             )
