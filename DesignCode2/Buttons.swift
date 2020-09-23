@@ -15,6 +15,8 @@ struct Buttons: View {
             
             CircleButton()
             
+            PayButton()
+            
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(#colorLiteral(red: 0.8980392157, green: 0.9333333333, blue: 1, alpha: 1)))
@@ -136,6 +138,60 @@ struct CircleButton: View {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                     self.tap = false
                 }
+            })
+            .onEnded({ value in
+                self.press.toggle()
+            })
+        )
+    }
+}
+
+//MARK:- 检测长按时间，制作动画
+struct PayButton: View {
+    
+    @GestureState var tap = false
+    @State var press = false
+    
+    var body: some View {
+        ZStack {
+            Image("fingerprint")
+                .opacity(press ? 0 : 1)
+                .scaleEffect(press ? 0 : 1)
+            
+            Image("fingerprint-2")
+                .clipShape(Rectangle().offset(y: tap ? 0 : 50))
+                .animation(.easeOut)
+                .opacity(press ? 0 : 1)
+                .scaleEffect(press ? 0 : 1)
+            
+            Image(systemName: "checkmark.circle.fill")
+                .font(.system(size: 44, weight: .light))
+                .foregroundColor(Color(#colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)))
+                .opacity(press ? 1 : 0)
+                .scaleEffect(press ? 1 : 0)
+            
+        }
+        .frame(width: 100, height: 100)
+        .background(
+            ZStack {
+                LinearGradient(gradient: Gradient(colors: [Color(press ? #colorLiteral(red: 0.7608050108, green: 0.8164883852, blue: 0.9259157777, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)), Color(press ? #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) : #colorLiteral(red: 0.7608050108, green: 0.8164883852, blue: 0.9259157777, alpha: 1))]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                
+                Circle()
+                    .stroke(Color.clear,lineWidth: 10)
+                    .shadow(color: Color(press ? #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) : #colorLiteral(red: 0.7608050108, green: 0.8164883852, blue: 0.9259157777, alpha: 1)), radius: 3, x: -5, y: -5)
+                
+                Circle()
+                    .stroke(Color.clear,lineWidth: 10)
+                    .shadow(color: Color(press ? #colorLiteral(red: 0.7608050108, green: 0.8164883852, blue: 0.9259157777, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)), radius: 3, x: 3, y: 3)
+            }
+        )
+        .clipShape(Circle())
+        .shadow(color: Color(press ? #colorLiteral(red: 0.7608050108, green: 0.8164883852, blue: 0.9259157777, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)), radius: 20, x: -20, y: -20)
+        .shadow(color: Color(press ? #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) : #colorLiteral(red: 0.7608050108, green: 0.8164883852, blue: 0.9259157777, alpha: 1)), radius: 20, x: 20, y: 20)
+        .scaleEffect(tap ? 1.2 : 1)
+        .gesture(
+            LongPressGesture().updating($tap, body: { (currentState, gesttureState, transtion) in
+                gesttureState = currentState
             })
             .onEnded({ value in
                 self.press.toggle()
