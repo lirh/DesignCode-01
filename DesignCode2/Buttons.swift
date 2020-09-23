@@ -7,6 +7,16 @@
 
 import SwiftUI
 
+//MARK: - 震动反馈
+func haptic(type: UINotificationFeedbackGenerator.FeedbackType){
+    UINotificationFeedbackGenerator().notificationOccurred(type)
+}
+
+//MARK: - 冲击振动
+func impact(style: UIImpactFeedbackGenerator.FeedbackStyle){
+    UIImpactFeedbackGenerator(style: style).impactOccurred()
+}
+
 struct Buttons: View {
     
     var body: some View {
@@ -84,6 +94,7 @@ struct RectangleButton: View {
                 //最小间隔、最大间隔
                 LongPressGesture(minimumDuration: 0.5, maximumDistance: 10).onChanged({ value in
                     self.tap = true
+                    impact(style: .heavy)
                     //增加延时 恢复
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                         self.tap = false
@@ -91,6 +102,7 @@ struct RectangleButton: View {
                 })
                 .onEnded({ value in
                     self.press.toggle()
+                    haptic(type: .success)
                 })
                 
             )
