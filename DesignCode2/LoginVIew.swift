@@ -17,6 +17,8 @@ struct LoginVIew: View {
     @State var showAlert: Bool = false
     @State var alertMessage = "Some went wrong."
     
+    @State var isLoading: Bool = false
+    
 //    MARK: - 隐藏键盘方法
     func hideKeyborad() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
@@ -90,7 +92,15 @@ struct LoginVIew: View {
                     Text("forgot password?")
                     Spacer()
                     Button(action: {
-                        showAlert = true
+                        
+                        hideKeyborad()
+                        isFocused = false
+                        isLoading = true
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            isLoading = false
+                            showAlert = true
+                        }
                     }) {
                         Text("Log in")
                     }
@@ -114,6 +124,10 @@ struct LoginVIew: View {
                 isFocused = false
                 hideKeyborad()
             })
+            
+            if isLoading {
+                LoadingView()
+            }
         }
     }
 }
